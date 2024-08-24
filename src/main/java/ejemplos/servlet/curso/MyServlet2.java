@@ -17,11 +17,16 @@ public class MyServlet2 extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
+		// Obtener los campos enviado desde el formulario
+		String name = request.getParameter("name");
+		String lastName = request.getParameter("lastName");
+
 		// send HTML page to client
 		out.println("<html>");
-		out.println("<head><title>Ejemplo HTML desde Servlet</title></head>");
+		out.println("<head><title>Bienvenid@</title></head>");
 		out.println("<body>");
-		out.println("<h1>Bienvenido!!</h1>");
+		out.println("<h1>Bienvenid@ " + name + ' ' + lastName + "</h1>");
+		out.println("</body></html>");
 	}
 
 }
